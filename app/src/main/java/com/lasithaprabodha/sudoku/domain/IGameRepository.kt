@@ -3,13 +3,13 @@ package com.lasithaprabodha.sudoku.domain
 interface IGameRepository {
     suspend fun saveGame(
         elapsedTime: Long,
-        onSuccess: (Unit) -> Unit,
-        enError: (Exception) -> Unit
+        onSuccess: () -> Unit,
+        onError: (Exception) -> Unit
     )
 
     suspend fun updateGame(
         game: SudokuPuzzle,
-        onSuccess: (Unit) -> Unit,
+        onSuccess: () -> Unit,
         onError: (Exception) -> Unit
     )
 
@@ -19,6 +19,12 @@ interface IGameRepository {
         color: Int,
         elapsedTime: Long,
         onSuccess: (isComplete: Boolean) -> Unit,
+        onError: (Exception) -> Unit
+    )
+
+    suspend fun createNewGame(
+        settings: Settings,
+        onSuccess: () -> Unit,
         onError: (Exception) -> Unit
     )
 
@@ -34,7 +40,7 @@ interface IGameRepository {
 
     suspend fun updateSettings(
         settings: Settings,
-        onSuccess: (Unit) -> Unit,
+        onSuccess: () -> Unit,
         onError: (Exception) -> Unit
     )
 }
