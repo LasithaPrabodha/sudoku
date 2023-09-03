@@ -1,5 +1,6 @@
 package com.lasithaprabodha.sudoku.domain
 
+import com.lasithaprabodha.sudoku.computationlogic.buildNewSudoku
 import java.io.Serializable
 import java.util.LinkedList
 

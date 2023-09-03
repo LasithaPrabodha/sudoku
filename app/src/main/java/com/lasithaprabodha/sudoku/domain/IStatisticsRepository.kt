@@ -6,7 +6,7 @@ interface IStatisticsRepository {
         onError:(Exception) -> Unit
     )
 
-    suspend fun updateStatistics(
+    suspend fun updateStatistic(
         time: Long,
         diff: Difficulty,
         boundary: Int,
